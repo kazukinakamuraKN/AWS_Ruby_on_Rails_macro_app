@@ -1,30 +1,30 @@
 <% basal_metabolism = 0 %>
-<% case params[:page][:gender] %>
-<% when "male" %>
+<% case params[:gender]%>
+<% when "男" %>
   <% basal_metabolism = (10 * params[:weight].to_i + 6.25 * params[:height].to_i - 5 * params[:old].to_i + 5).round(0) %>
-<% when "female" %>
+<% when "女" %>
   <% basal_metabolism = (10 * params[:weight].to_i + 6.25 * params[:height].to_i - 5 * params[:old].to_i - 161).round(0) %>
 <% end %>
 <p>基礎代謝</p>
 <%= basal_metabolism %> kcal
 
 <% active_volume = 0 %>
-<% case params[:page][:activity] %>
-<% when "low" %>
+<% case params[:activity] %>
+<% when "低い" %>
   <% active_volume = 1.2 %>
-<% when "mid" %>
+<% when "まあまあ" %>
   <% active_volume = 1.55 %>
-<% when "high" %>
+<% when "かなり高い" %>
   <% active_volume = 1.725 %>
 <% end %>
 
 <% purpose = 0 %>
-<% case params[:page][:purpose] %>
-<% when "loss" %>
+<% case params[:purpose] %>
+<% when "減量" %>
   <% purpose = 0.8 %>
-<% when "maintenance" %>
+<% when "維持" %>
   <% purpose = 1 %>
-<% when "increase" %>
+<% when "増量" %>
   <% purpose = 1.2 %>
 <% end %>
 
