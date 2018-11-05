@@ -1,6 +1,6 @@
 <%= form_with url: static_pages_result_url, local: true do |form| %>
   <%= form.label :性別 %>
-  <%= form.text_field :gender %>
+  <%=  select :page, :gender, {"男" => "male", "女" => "female"} %>
   <br></br>
   <%= form.label :身長 %>
   <%= form.text_field :height %>
@@ -12,10 +12,10 @@
   <%= form.text_field :old %>
   <br></br>
   <%= form.label :アクティブ度 %>
-  <%= form.text_field :activity %>
+  <%=  select :page, :activity, {"低い" => "low", "まあまあ" => "mid", "かなり高い" => "high"} %>
   <br></br>
   <%= form.label :目的 %>
-  <%= form.text_field :purpose %>
+  <%=  select :page, :purpose, {"減量" => "loss", "維持" => "maintenance", "増量" => "increase"} %>
   <br></br>
   <%= form.submit "results"%>
 <% end %>
