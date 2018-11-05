@@ -1,2 +1,21 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<%= form_with url: static_pages_result_url, local: true do |form| %>
+  <%= form.label :性別 %>
+  <%= form.text_field :gender %>
+  <br></br>
+  <%= form.label :身長 %>
+  <%= form.text_field :height %>
+  <br></br>
+  <%= form.label :体重 %>
+  <%= form.text_field :weight %>
+  <br></br>
+  <%= form.label :年齢 %>
+  <%= form.text_field :old %>
+  <br></br>
+  <%= form.label :アクティブ度 %>
+  <%= form.text_field :activity %>
+  <br></br>
+  <%= form.label :目的 %>
+  <%= form.text_field :purpose %>
+  <br></br>
+  <%= form.submit "results"%>
+<% end %>
