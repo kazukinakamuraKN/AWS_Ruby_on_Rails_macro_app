@@ -1,3 +1,4 @@
+<!--基礎代謝を求める（男、女）-->
 <% basal_metabolism = 0 %>
 <% case params[:page][:gender] %>
 <% when "male" %>
@@ -8,6 +9,7 @@
 <p>基礎代謝</p>
 <%= basal_metabolism %> kcal
 
+<!--活動量（少ない、普通、多い）-->
 <% active_volume = 0 %>
 <% case params[:page][:activity] %>
 <% when "low" %>
@@ -18,6 +20,7 @@
   <% active_volume = 1.725 %>
 <% end %>
 
+<!--目標体重（減量、維持、増量）-->
 <% purpose = 0 %>
 <% case params[:page][:purpose] %>
 <% when "loss" %>
@@ -36,7 +39,6 @@
 <% protein = (params[:weight].to_i * 2 * 4).round(0) %>
 <%= protein / 4 %> g
 
-
 <p>脂質</p>
 <% liqid = (total_calorie / 4).round(0) %>
 <%= liqid / 9 %> g
@@ -44,4 +46,4 @@
 <p>炭水化物</p>
 <% carbohydrate = (total_calorie - protein - liqid).round(0) %>
 <%= carbohydrate / 4 %>
-<%= @msg %>
+<!--<%= @msg %>-->
