@@ -3,7 +3,7 @@ ja:
     messages:
       blank: "が未入力です"
       not_a_number: "は数値です"
-      inclusion: "は0~500です"
+      # inclusion: "は0~500です"
   attributes:
     height: "身長"
     weight: "体重"
