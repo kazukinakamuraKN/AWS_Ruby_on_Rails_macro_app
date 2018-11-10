@@ -1,6 +1,6 @@
 <!--基礎代謝を求める（男、女）-->
 <% basal_metabolism = 0 %>
-<% case params[:page][:gender] %>
+<% case params[:gender] %>
 <% when "male" %>
   <% basal_metabolism = (10 * params[:weight].to_i + 6.25 * params[:height].to_i - 5 * params[:old].to_i + 5).round(0) %>
 <% when "female" %>
@@ -11,7 +11,7 @@
 
 <!--活動量（少ない、普通、多い）-->
 <% active_volume = 0 %>
-<% case params[:page][:activity] %>
+<% case params[:activity] %>
 <% when "low" %>
   <% active_volume = 1.2 %>
 <% when "mid" %>
@@ -22,7 +22,7 @@
 
 <!--目標体重（減量、維持、増量）-->
 <% purpose = 0 %>
-<% case params[:page][:purpose] %>
+<% case params[:purpose] %>
 <% when "loss" %>
   <% purpose = 0.8 %>
 <% when "maintenance" %>
@@ -45,5 +45,5 @@
 
 <p>炭水化物</p>
 <% carbohydrate = (total_calorie - protein - liqid).round(0) %>
-<%= carbohydrate / 4 %>
+<%= carbohydrate / 4 %> g
 <!--<%= @msg %>-->
