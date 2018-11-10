@@ -1,3 +1,4 @@
+<div class="result-page">
 <!--基礎代謝を求める（男、女）-->
 <% basal_metabolism = 0 %>
 <% case params[:gender] %>
@@ -47,3 +48,4 @@
 <% carbohydrate = (total_calorie - protein - liqid).round(0) %>
 <%= carbohydrate / 4 %> g
 <!--<%= @msg %>-->
+</div>
