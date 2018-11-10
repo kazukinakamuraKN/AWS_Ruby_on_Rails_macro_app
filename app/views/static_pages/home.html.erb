@@ -1,28 +1,22 @@
 <%= form_with url: static_pages_result_url, local: true do |form| %>
   <!--無効な値を送信して、このページをrenderしたときに、:height,:weight,:oldがapplication_form[height]となってpostリクエストされてしまうため、それを阻止するためにmodel: @applicationForm,の記述を上記行より削除-->
   
+  <div class="hoge">
+  
   <%= render 'shared/error_messages' %>
   
-  <%= form.label :性別 %>
-  <%=  select :page, :gender, {"男" => "male", "女" => "female"} %>
-  <br></br>
-  <%= form.label :身長 %>
-  <br>
-  <%= form.text_field :height, class: 'form-control' %>
-  <br></br>
-  <%= form.label :体重 %>
-  <br>
-  <%= form.text_field :weight, class: 'form-control' %>
-  <br></br>
-  <%= form.label :年齢 %>
-  <br>
-  <%= form.text_field :old, class: 'form-control' %>
-  <br></br>
-  <%= form.label :アクティブ度 %>
-  <%=  select :page, :activity, {"低い" => "low", "まあまあ" => "mid", "かなり高い" => "high"} %>
-  <br></br>
-  <%= form.label :目的 %>
-  <%=  select :page, :purpose, {"減量" => "loss", "維持" => "maintenance", "増量" => "increase"} %>
-  <br></br>
+  <%=  select :page, :gender, {"男": "male", "女": "female"}, class: "selectbox" %>
+  <br><br>
+  <%= form.text_field :height, placeholder: "身長を入力", class: 'form-control' %>
+  <br><br>
+  <%= form.text_field :weight, placeholder: "体重を入力", class: 'form-control' %>
+  <br><br>
+  <%= form.text_field :old, placeholder: "年齢を入力", class: 'form-control' %>
+  <br><br>
+  <%=  select :page, :activity, {"低い": "low", "まあまあ": "mid", "かなり高い": "high"}, class: "selectbox" %>
+  <br><br>
+  <%=  select :page, :purpose, {"減量": "loss", "維持": "maintenance", "増量": "increase"}, class: "selectbox" %>
+  <br><br>
   <%= form.submit "計算する"%>
+  </div>
 <% end %>

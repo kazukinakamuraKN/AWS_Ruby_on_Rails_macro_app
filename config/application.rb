@@ -18,5 +18,10 @@ module MacroApp
       %Q(#{html_tag}).html_safe
     end
     # <div class="field_with_errors"></div>が出力されないように上記三行を記述
+    
+    config.i18n.default_locale = :ja
+    # エラーメッセージの日本語化
+    # config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
+    
   end
 end
